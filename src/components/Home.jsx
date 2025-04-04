@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import luna from "../assets/luna.png"; // Assurez-vous que l'image est au bon emplacement
+import luna from "../assets/luna.png"; 
+import TestimonialsSection from "./TestimonialsSection";
 
 const StatsSection = () => {
   const stats = [
@@ -9,28 +10,42 @@ const StatsSection = () => {
     { value: "1 million+", label: "Words translated, edited and reviewed" },
     { value: "350+", label: "Conferences interpreted" },
     { value: "234+", label: "Videos & Films subtitled" },
-    { value: "3", label: "Industry conferences as public speaker" },
-    { value: "1", label: "Translated novel published" },
+    {
+      value: "3",
+      label:
+        "Industry conferences as public speaker Translated novel published",
+    },
     { value: "0", label: "Deadlines missed" },
     { value: "100%", label: "Satisfaction rating" },
   ];
 
   return (
     <section id="stats" className="py-16 px-6 bg-white text-center">
-      <h2 className="text-3xl font-bold text-primary mb-8">IN FIGURES</h2>
+      <motion.h2
+        className="text-3xl font-bold text-primary mb-8"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        }}
+      >
+        IN FIGURES
+      </motion.h2>
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         initial="hidden"
         animate="visible"
         variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
         {stats.map((stat, index) => (
           <motion.div
             key={index}
             className="bg-gray-50 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -64,45 +79,76 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-4xl font-bold text-primary mb-4">
+            <motion.h1
+              className="text-4xl font-bold text-primary mb-4"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               French Translator for Art & Culture
-            </h1>
-            <p className="text-lg text-gray-700 mb-4">
+            </motion.h1>
+            <motion.p
+              className="text-lg text-gray-700 mb-4"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
               Helping Museums & Institutions get more International Visitors
               each year with Expertly Curated Language Services
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
       <section id="intro" className="py-16 px-6 text-center bg-gray-100">
-        <h1 className="text-4xl font-bold text-primary mb-4">
+        <motion.h1
+          className="text-4xl font-bold text-primary mb-4"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Devoted, Specialised, Experienced Translator
-        </h1>
-        <p className="text-lg mb-6">
+        </motion.h1>
+        <motion.p
+          className="text-lg mb-6"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           An all-in-one best-in-class translation service, captivating audiences
           through the power of translation.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p>
           <a
             href="#projects"
             className="btn px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark"
           >
             Explore Case Studies
           </a>
-        </p>
+        </motion.p>
       </section>
 
       <StatsSection />
-
+      <TestimonialsSection />
       <section id="projects" className="py-16 px-6 bg-white">
-        <h2 className="text-3xl font-bold text-center text-primary mb-12">
+        <motion.h2
+          className="text-3xl font-bold text-center text-primary mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Some Featured Projects
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Project 1 */}
-          <div className="project bg-gray-50 p-6 rounded-lg shadow-lg">
+          <motion.div
+            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3 className="text-xl font-semibold mb-2">
               Auschwitz: Not Long Ago, Not Far Away
             </h3>
@@ -114,11 +160,16 @@ const Home = () => {
               English into Swedish in collaboration with the Auschwitz-Birkenau
               Museum.
             </p>
-            <p>Read More</p>
-          </div>
+          </motion.div>
 
           {/* Project 2 */}
-          <div className="project bg-gray-50 p-6 rounded-lg shadow-lg">
+          <motion.div
+            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3 className="text-xl font-semibold mb-2">
               UNESCO Heritage Project
             </h3>
@@ -129,10 +180,16 @@ const Home = () => {
               <strong>Description:</strong> Co-translated and edited a UNESCO
               heritage project for a large cultural platform.
             </p>
-          </div>
+          </motion.div>
 
           {/* Project 3 */}
-          <div className="project bg-gray-50 p-6 rounded-lg shadow-lg">
+          <motion.div
+            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3 className="text-xl font-semibold mb-2">
               Audioguide Translation
             </h3>
@@ -143,17 +200,16 @@ const Home = () => {
               <strong>Description:</strong> Translated and reviewed audioguide
               content for one of the world's most famous museums.
             </p>
-            <p>
-              <a
-                href="mailto:luna@artlifetranslations.com"
-                className="text-primary"
-              >
-                Contact Luna
-              </a>
-            </p>
-          </div>
+          </motion.div>
+
           {/* Project 4 */}
-          <div className="project bg-gray-50 p-6 rounded-lg shadow-lg">
+          <motion.div
+            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3 className="text-xl font-semibold mb-2">Picturing Auschwitz</h3>
             <p>
               <strong>Words Translated:</strong> 7K
@@ -162,25 +218,27 @@ const Home = () => {
               <strong>Description:</strong> Translated exhibition content for
               the Auschwitz-Birkenau Museum, displayed at the UN HQ.
             </p>
-            <p>
-              <a
-                href="mailto:luna@artlifetranslations.com"
-                className="text-primary"
-              >
-                Contact Luna
-              </a>
-            </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="contact" className="py-16 px-6 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold text-primary mb-4">
+        <motion.h2
+          className="text-3xl font-bold text-primary mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Let's Work Together!
-        </h2>
-        <p className="text-lg mb-6">
+        </motion.h2>
+        <motion.p
+          className="text-lg mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           Click below to book a FREE consultation with Luna Jungblut.
-        </p>
+        </motion.p>
         <a
           href="http://calendly.com/artlifetranslations/consultation"
           className="btn px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark"

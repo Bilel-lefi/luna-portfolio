@@ -42,9 +42,10 @@ const caseStudies = [
     title: "Exhibition 'Auschwitz: Not Long Ago, Not Far Away'",
     service: "Exhibition Translation Project Management",
     languages: " English to Swedish",
-    topic: "Art exhibition “Auschwitz: Not Long Ago, Not Far Away” to open in Malmö, Sweden. 70K words",
+    topic:
+      "Art exhibition “Auschwitz: Not Long Ago, Not Far Away” to open in Malmö, Sweden. 70K words",
     description:
-"I carefully selected and vetted the team of specialised translators and managed the very large translation project from English into Swedish of the award-winning exhibition, in constant collaboration with the Auschwitz-Birkenau Museum and the Living History Forum of Sweden."
+      "I carefully selected and vetted the team of specialised translators and managed the very large translation project from English into Swedish of the award-winning exhibition, in constant collaboration with the Auschwitz-Birkenau Museum and the Living History Forum of Sweden.",
     results:
       "Grâce à une préparation minutieuse et à l'expérience des interprètes, adaptation aux conditions inhabituelles (interprétation dans une ferme), permettant aux acteurs de l'agro-industrie venus de toute l'Europe de comprendre et de participer sans problème aux discussions complexes des panels et aux tables rondes d'experts.",
     images: [case3],

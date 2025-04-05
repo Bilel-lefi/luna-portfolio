@@ -1,22 +1,22 @@
-
 import { motion } from "framer-motion";
 import luna from "../assets/luna.png";
 import TestimonialsSection from "./TestimonialsSection";
 import "./Typewriter.css";
 import CaseStudiesList from "./CaseStudiesList";
 import React, { useState, useEffect } from "react";
-;
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const StatsSection = () => {
   const stats = [
     { value: 132, label: "Happy clients" },
     { value: 654, label: "Projects delivered" },
-    { value: 1000000 , label: "Words translated, edited and reviewed" },
+    { value: 1000000, label: "Words translated, edited and reviewed" },
     { value: 350, label: "Conferences interpreted" },
     { value: 234, label: "Videos & Films subtitled" },
     {
       value: 3,
-      label: "Industry conferences as public speaker Translated novel published",
+      label:
+        "Industry conferences as public speaker Translated novel published",
     },
     { value: 0, label: "Deadlines missed" },
     { value: 100, label: "Satisfaction rating" },
@@ -34,15 +34,18 @@ const StatsSection = () => {
           if (stat.value < targetValue) {
             return {
               ...stat,
-              value: Math.min(stat.value + Math.ceil(targetValue / 100), targetValue),
+              value: Math.min(
+                stat.value + Math.ceil(targetValue / 100),
+                targetValue
+              ),
             };
           }
           return stat;
         })
       );
-    }, 40); // Increment every 40 ms to gradually reach the final number in 4 seconds
+    }, 40); // Incrémentation toutes les 40 ms
 
-    return () => clearInterval(interval); // Clean up the interval when component unmounts
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -50,7 +53,8 @@ const StatsSection = () => {
       <motion.h2
         className="text-3xl font-bold text-primary mb-8"
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={{
           hidden: { opacity: 0, y: 50 },
           visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -61,7 +65,8 @@ const StatsSection = () => {
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
@@ -77,7 +82,10 @@ const StatsSection = () => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <p className="text-4xl font-semibold text-teal-600">{stat.value}{stat.value < stats[index].value && "+"}</p>
+            <p className="text-4xl font-semibold text-teal-600">
+              {stat.value}
+              {stat.value < stats[index].value && "+"}
+            </p>
             <p className="text-lg text-gray-700">{stat.label}</p>
           </motion.div>
         ))}
@@ -86,11 +94,9 @@ const StatsSection = () => {
   );
 };
 
-
-
 const Home = () => {
   return (
-    <div className="font-sans bg-[#44a299] text-gray-900">
+    <div className="font-sans text-gray-900">
       <section id="hero" className="py-16 px-6 bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <motion.div
@@ -102,7 +108,7 @@ const Home = () => {
             <img
               src={luna}
               alt="Logo"
-              className="w-60 h-auto rounded-full mb-5 sm:mb-0"
+              className="w-60 h-auto rounded-3xl mb-5 sm:mb-0"
             />
           </motion.div>
           <motion.div
@@ -133,6 +139,55 @@ const Home = () => {
               Helping Museums & Institutions get more International Visitors
               each year with Expertly Curated Language Services
             </motion.p>
+            <motion.p
+              className="text-lg text-gray-700 mb-4"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <div className="flex justify-center md:justify-start space-x-6">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook
+                    size={40}
+                    className="text-blue-600 hover:text-blue-800 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram
+                    size={40}
+                    className="text-pink-600 hover:text-pink-800 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTwitter
+                    size={40}
+                    className="text-blue-400 hover:text-blue-600 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin
+                    size={40}
+                    className="text-blue-700 hover:text-blue-900 transition-all duration-300"
+                  />
+                </a>
+              </div>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -157,7 +212,7 @@ const Home = () => {
         </motion.p>
         <motion.p>
           <a
-            href="#projects"
+            href="#CaseStudies"
             className="btn px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark"
           >
             Explore Case Studies
@@ -238,7 +293,7 @@ const Home = () => {
               content for one of the world's most famous museums.
             </p>
           </motion.div>
-        {/* Project 4 */}
+          {/* Project 4 */}
           <motion.div
             className="project bg-gray-50 p-6 rounded-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -256,10 +311,9 @@ const Home = () => {
             </p>
           </motion.div>
         </div>
-        <CaseStudiesList/>
       </section>
-
-      <section id="contact" className="py-16 px-6 bg-gray-100 text-center">
+<section className="bg-white"><CaseStudiesList /></section>
+      <section id="contact" className="py-16 px-6 bg-white text-center">
         <motion.h2
           className="text-3xl font-bold text-primary mb-4"
           initial={{ opacity: 0 }}

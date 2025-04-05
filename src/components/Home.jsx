@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import luna from "../assets/luna.png";
 import TestimonialsSection from "./TestimonialsSection";
-import AnimatedCard from "./AnimatedCard";
 import "./Typewriter.css";
 import CaseStudiesList from "./CaseStudiesList";
 const StatsSection = () => {
@@ -257,7 +256,7 @@ const Home = () => {
           Book Consultation
         </a>
       </section>
-      <AnimatedCard />
+
       <footer className="bg-gray-900 text-white py-6 text-center">
         <p>
           &copy; Luna Jungblut, MA, MCIL CL |{" "}

@@ -1,24 +1,49 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import luna from "../assets/luna.png";
 import TestimonialsSection from "./TestimonialsSection";
 import "./Typewriter.css";
 import CaseStudiesList from "./CaseStudiesList";
+import React, { useState, useEffect } from "react";
+;
+
 const StatsSection = () => {
   const stats = [
-    { value: "132+", label: "Happy clients" },
-    { value: "654+", label: "Projects delivered" },
-    { value: "1 million+", label: "Words translated, edited and reviewed" },
-    { value: "350+", label: "Conferences interpreted" },
-    { value: "234+", label: "Videos & Films subtitled" },
+    { value: 132, label: "Happy clients" },
+    { value: 654, label: "Projects delivered" },
+    { value: 1000000 , label: "Words translated, edited and reviewed" },
+    { value: 350, label: "Conferences interpreted" },
+    { value: 234, label: "Videos & Films subtitled" },
     {
-      value: "3",
-      label:
-        "Industry conferences as public speaker Translated novel published",
+      value: 3,
+      label: "Industry conferences as public speaker Translated novel published",
     },
-    { value: "0", label: "Deadlines missed" },
-    { value: "100%", label: "Satisfaction rating" },
+    { value: 0, label: "Deadlines missed" },
+    { value: 100, label: "Satisfaction rating" },
   ];
+
+  const [animatedValues, setAnimatedValues] = useState(
+    stats.map((stat) => ({ value: 0, label: stat.label }))
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimatedValues((prevValues) =>
+        prevValues.map((stat, index) => {
+          const targetValue = stats[index].value;
+          if (stat.value < targetValue) {
+            return {
+              ...stat,
+              value: Math.min(stat.value + Math.ceil(targetValue / 100), targetValue),
+            };
+          }
+          return stat;
+        })
+      );
+    }, 40); // Increment every 40 ms to gradually reach the final number in 4 seconds
+
+    return () => clearInterval(interval); // Clean up the interval when component unmounts
+  }, []);
 
   return (
     <section id="stats" className="py-16 px-6 bg-white text-center">
@@ -42,7 +67,7 @@ const StatsSection = () => {
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
-        {stats.map((stat, index) => (
+        {animatedValues.map((stat, index) => (
           <motion.div
             key={index}
             className="bg-gray-50 p-6 rounded-lg shadow-lg"
@@ -52,7 +77,7 @@ const StatsSection = () => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <p className="text-4xl font-semibold text-teal-600">{stat.value}</p>
+            <p className="text-4xl font-semibold text-teal-600">{stat.value}{stat.value < stats[index].value && "+"}</p>
             <p className="text-lg text-gray-700">{stat.label}</p>
           </motion.div>
         ))}
@@ -60,6 +85,8 @@ const StatsSection = () => {
     </section>
   );
 };
+
+
 
 const Home = () => {
   return (

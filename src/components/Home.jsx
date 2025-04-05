@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import luna from "../assets/luna.png"; 
+import luna from "../assets/luna.png";
 import TestimonialsSection from "./TestimonialsSection";
-
+import AnimatedCard from "./AnimatedCard";
+import "./Typewriter.css";
+import CaseStudiesList from "./CaseStudiesList";
 const StatsSection = () => {
   const stats = [
     { value: "132+", label: "Happy clients" },
@@ -66,12 +68,16 @@ const Home = () => {
       <section id="hero" className="py-16 px-6 bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <motion.div
-            className="md:w-1/2 flex justify-center"
+            className=" md:w-1/2 flex justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <img src={luna} alt="Logo" className="w-60 h-auto rounded-full" />
+            <img
+              src={luna}
+              alt="Logo"
+              className="w-60 h-auto rounded-full mb-5 sm:mb-0"
+            />
           </motion.div>
           <motion.div
             className="md:w-1/2 text-center md:text-left"
@@ -85,6 +91,11 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
+              <div className="flex items-center justify-center">
+                <h1 className="text-tertiary text-4xl md:text-6xl font-bold whitespace-nowrap border-r-4 border-white pr-4 animate-typewriter overflow-hidden">
+                  Hi ! i'am Luna{" "}
+                </h1>
+              </div>
               French Translator for Art & Culture
             </motion.h1>
             <motion.p
@@ -201,8 +212,7 @@ const Home = () => {
               content for one of the world's most famous museums.
             </p>
           </motion.div>
-
-          {/* Project 4 */}
+        {/* Project 4 */}
           <motion.div
             className="project bg-gray-50 p-6 rounded-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -220,6 +230,7 @@ const Home = () => {
             </p>
           </motion.div>
         </div>
+        <CaseStudiesList/>
       </section>
 
       <section id="contact" className="py-16 px-6 bg-gray-100 text-center">
@@ -246,7 +257,7 @@ const Home = () => {
           Book Consultation
         </a>
       </section>
-
+      <AnimatedCard />
       <footer className="bg-gray-900 text-white py-6 text-center">
         <p>
           &copy; Luna Jungblut, MA, MCIL CL |{" "}

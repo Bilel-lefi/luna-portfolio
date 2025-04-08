@@ -12,8 +12,8 @@ const StatsSection = () => {
     { value: 132, label: "Happy clients" },
     { value: 654, label: "Projects delivered" },
     { value: 1000000, label: "Words translated, edited and reviewed" },
-    { value: 350, label: "Conferences interpreted" },
-    { value: 234, label: "Videos & Films subtitled" },
+    // { value: 350, label: "Conferences interpreted" },
+    // { value: 234, label: "Videos & Films subtitled" },
     // {
     //   value: 3,
     //   label:

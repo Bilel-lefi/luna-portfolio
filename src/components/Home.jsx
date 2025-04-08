@@ -104,8 +104,12 @@ const StatsSection = () => {
 const Home = () => {
   return (
     <div className="font-sans  text-gray-900">
-      <section id="hero" className="flex py-16 px-6 overflow-hidden bg-[#c1ecf1] md:bg-white"
-      // style={{backgroundImage:`url:(${bg3})`}}
+      <section
+        id="hero"
+        className="flex py-16 px-6 overflow-hidden"
+        style={{
+          background: "linear-gradient(to right, #97f0f5, white)",
+        }}
       >
         {/* Contenu principal */}
         <div className="relative z-10 container mx-auto flex flex-col  bg-transparent">
@@ -207,10 +211,14 @@ const Home = () => {
           <img src={bg2} alt="" className="w-[80%] hidden md:block " />
         </div>
       </section>
-      <section className="bg-white">
-        <CaseStudiesList />
-      </section>
-      <section id="intro" className="py-16 px-6 text-center bg-gray-100">
+
+      <section
+        id="intro"
+        className="py-16 px-6 text-center "
+        style={{
+          background: "linear-gradient(to right, #97f0f5, white)",
+        }}
+      >
         <motion.h1
           className="text-4xl font-bold text-primary mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -237,7 +245,9 @@ const Home = () => {
           </a>
         </motion.p>
       </section>
-
+      <section className="bg-white">
+        <CaseStudiesList />
+      </section>
       <StatsSection />
       <TestimonialsSection />
       <section id="projects" className="py-16 px-6 bg-white">

@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-[#97f0f5] py-16">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-3xl font-bold text-center text-primary mb-8 underline"

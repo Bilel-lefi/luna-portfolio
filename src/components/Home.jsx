@@ -5,7 +5,8 @@ import "./Typewriter.css";
 import CaseStudiesList from "./CaseStudiesList";
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-
+import bg2 from "../assets/bg2.jpeg";
+import bg3 from "../assets/bg3.jpg";
 const StatsSection = () => {
   const stats = [
     { value: 132, label: "Happy clients" },
@@ -13,11 +14,11 @@ const StatsSection = () => {
     { value: 1000000, label: "Words translated, edited and reviewed" },
     { value: 350, label: "Conferences interpreted" },
     { value: 234, label: "Videos & Films subtitled" },
-    {
-      value: 3,
-      label:
-        "Industry conferences as public speaker Translated novel published",
-    },
+    // {
+    //   value: 3,
+    //   label:
+    //     "Industry conferences as public speaker Translated novel published",
+    // },
     { value: 0, label: "Deadlines missed" },
     { value: 100, label: "Satisfaction rating" },
   ];
@@ -51,7 +52,7 @@ const StatsSection = () => {
   return (
     <section id="stats" className="py-16 px-6 bg-white text-center">
       <motion.h2
-        className="text-3xl font-bold text-primary mb-8"
+        className="text-3xl font-bold text-primary mb-8 underline"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -75,18 +76,24 @@ const StatsSection = () => {
         {animatedValues.map((stat, index) => (
           <motion.div
             key={index}
-            className="bg-gray-50 p-6 rounded-lg shadow-lg"
+            className="relative group bg-gray-50 p-6 rounded-lg shadow-lg h-40 flex items-center justify-center overflow-hidden"
             whileHover={{ scale: 1.05 }}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <p className="text-4xl font-semibold text-teal-600">
-              {stat.value}
-              {stat.value < stats[index].value && "+"}
-            </p>
-            <p className="text-lg text-gray-700">{stat.label}</p>
+            {/* Animated background ON HOVER */}
+            <div className="absolute inset-0 bg-gradient-to-l from-[#dda7d3] to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />
+
+            {/* Card content */}
+            <div className="relative z-10 text-center">
+              <p className="text-4xl font-semibold text-teal-600">
+                {stat.value}
+                {stat.value < stats[index].value && "+"}
+              </p>
+              <p className="text-lg text-gray-700">{stat.label}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>
@@ -96,42 +103,48 @@ const StatsSection = () => {
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-900">
-      <section id="hero" className="py-16 px-6 bg-gray-100">
-        <div className="container mx-auto flex flex-col md:flex-row items-center">
-          <motion.div
-            className=" md:w-1/2 flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <img
-              src={luna}
-              alt="Logo"
-              className="w-60 h-auto rounded-3xl mb-5 sm:mb-0"
-            />
-          </motion.div>
-          <motion.div
-            className="md:w-1/2 text-center md:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
+    <div className="font-sans  text-gray-900">
+      <section id="hero" className="flex py-16 px-6 overflow-hidden bg-[#c1ecf1] md:bg-white"
+      // style={{backgroundImage:`url:(${bg3})`}}
+      >
+        {/* Contenu principal */}
+        <div className="relative z-10 container mx-auto flex flex-col  bg-transparent">
+          <div className="flex flex-col md:flex-row">
+            <motion.div
+              className=" flex justify-center"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <img
+                src={luna}
+                alt="Logo"
+                className="w-60 h-auto rounded-3xl mb-5 sm:mb-0"
+              />
+            </motion.div>
             <motion.h1
-              className="text-4xl font-bold text-primary mb-4"
+              className="px-3 text-4xl font-bold text-primary mb-4 text-center md:text-left"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
               <div className="flex items-center justify-center">
                 <h1 className="text-tertiary text-4xl md:text-6xl font-bold whitespace-nowrap border-r-4 border-white pr-4 animate-typewriter overflow-hidden">
-                  Hi ! i'am Luna{" "}
+                  Hi ! I'am Luna{" "}
                 </h1>
               </div>
               French Translator for Art & Culture
             </motion.h1>
+          </div>
+
+          <motion.div
+            className=" text-center md:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <motion.p
-              className="text-lg text-gray-700 mb-4"
+              className="py-5 md:text-3xl text-gray-700 mb-4"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -190,8 +203,13 @@ const Home = () => {
             </motion.p>
           </motion.div>
         </div>
+        <div className="flex items-center justify-center bg-cover bg-right opacity-100 bg-transparent">
+          <img src={bg2} alt="" className="w-[80%] hidden md:block " />
+        </div>
       </section>
-
+      <section className="bg-white">
+        <CaseStudiesList />
+      </section>
       <section id="intro" className="py-16 px-6 text-center bg-gray-100">
         <motion.h1
           className="text-4xl font-bold text-primary mb-4"
@@ -224,7 +242,7 @@ const Home = () => {
       <TestimonialsSection />
       <section id="projects" className="py-16 px-6 bg-white">
         <motion.h2
-          className="text-3xl font-bold text-center text-primary mb-12"
+          className="text-3xl font-bold text-center text-primary mb-12 underline"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -312,15 +330,15 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-<section className="bg-white"><CaseStudiesList /></section>
+
       <section id="contact" className="py-16 px-6 bg-white text-center">
         <motion.h2
-          className="text-3xl font-bold text-primary mb-4"
+          className="text-3xl font-bold text-primary mb-4 underline"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Let's Work Together!
+          Let's Work Together !
         </motion.h2>
         <motion.p
           className="text-lg mb-6"

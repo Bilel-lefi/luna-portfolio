@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
     <div className="bg-white py-16">
       <div className="container mx-auto px-6">
         <motion.h2
-          className="text-3xl font-bold text-center text-primary mb-8"
+          className="text-3xl font-bold text-center text-primary mb-8 underline"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

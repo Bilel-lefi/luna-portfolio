@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="bg-[#97f0f5] py-16">
+    <div className="bg-gray-300 py-16">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-3xl font-bold text-center text-primary mb-8 underline"
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          What My Clients Say
+          What my clients say
         </motion.h2>
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (

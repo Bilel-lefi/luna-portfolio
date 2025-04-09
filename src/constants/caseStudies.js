@@ -11,7 +11,7 @@ const caseStudies = [
 
     title: " Museum audioguide translation",
     service: "Translation & proofreading",
-    languages: "English to French",
+    languages: "English to french",
     topic:
       "Exhibits spanning all art history from its very beginnings. 100K words",
     description:
@@ -24,7 +24,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    title: " Columbia University",
+    title: " Columbia university",
     service: "RSI (Remote Simultaneous Interpreting)",
     languages: " English to French",
     topic:
@@ -39,8 +39,8 @@ const caseStudies = [
   },
   {
     id: 3,
-    title: "Exhibition 'Auschwitz: Not Long Ago, Not Far Away'",
-    service: "Exhibition Translation Project Management",
+    title: "Exhibition 'Auschwitz: not long ago, not far away'",
+    service: "Exhibition translation project management",
     languages: " English to Swedish",
     topic:
       "Art exhibition “Auschwitz: Not Long Ago, Not Far Away” to open in Malmö, Sweden. 70K words",
@@ -68,7 +68,7 @@ const caseStudies = [
   },
   {
     id: 5,
-    title: "Penn State University",
+    title: "Penn state university",
     service: "RSI (Remote Simultaneous Interpreting) ",
     languages: " English to French, English to Brazilian Portuguese",
     topic: " Black Lives Matter, Archaeology. 1-day conference",

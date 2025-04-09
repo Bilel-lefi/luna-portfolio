@@ -13,7 +13,7 @@ const StatsSection = () => {
     { value: 654, label: "Projects delivered" },
     { value: 1000000, label: "Words translated, edited and reviewed" },
     // { value: 350, label: "Conferences interpreted" },
-    // { value: 234, label: "Videos & Films subtitled" },
+
     // {
     //   value: 3,
     //   label:
@@ -61,7 +61,8 @@ const StatsSection = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 1 } },
         }}
       >
-        IN FIGURES
+
+        In figures
       </motion.h2>
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -106,14 +107,14 @@ const Home = () => {
     <div className="font-sans  text-gray-900">
       <section
         id="hero"
-        className="flex py-16 px-6 overflow-hidden"
+        className="flex pt-12 pb-2 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(to right, #97f0f5, white)",
+          background: "linear-gradient(to right, #44a299, white 55%)",
         }}
       >
         {/* Contenu principal */}
         <div className="relative z-10 container mx-auto flex flex-col  bg-transparent">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row ">
             <motion.div
               className=" flex justify-center"
               initial={{ opacity: 0, x: 50 }}
@@ -127,22 +128,22 @@ const Home = () => {
               />
             </motion.div>
             <motion.h1
-              className="px-3 text-4xl font-bold text-primary mb-4 text-center md:text-left"
+              className="px-3 text-4xl font-bold text-primary mb-4 ml-1 text-center md:text-left"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
               <div className="flex items-center justify-center">
                 <h1 className="text-tertiary text-4xl md:text-6xl font-bold whitespace-nowrap border-r-4 border-white pr-4 animate-typewriter overflow-hidden">
-                  Hi ! I'am Luna{" "}
+                  Hi! I'm Luna{" "}
                 </h1>
               </div>
-              French Translator for Art & Culture
+              French translator for art & culture
             </motion.h1>
           </div>
 
           <motion.div
-            className=" text-center md:text-left"
+            className="ml-1 text-center md:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -153,8 +154,8 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Helping Museums & Institutions get more International Visitors
-              each year with Expertly Curated Language Services
+              Helping museums & institutions get more international visitors
+              each year with expertly curated language services
             </motion.p>
             <motion.p
               className="text-lg text-gray-700 mb-4"
@@ -214,9 +215,9 @@ const Home = () => {
 
       <section
         id="intro"
-        className="py-16 px-6 text-center "
+        className="pb-10 px-6 text-center "
         style={{
-          background: "linear-gradient(to right, #97f0f5, white)",
+          background: "linear-gradient(to right, #44a299, white 55%)",
         }}
       >
         <motion.h1
@@ -225,7 +226,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Devoted, Specialised, Experienced Translator
+          Devoted, Specialised, Experienced translator
         </motion.h1>
         <motion.p
           className="text-lg mb-6"
@@ -241,105 +242,17 @@ const Home = () => {
             href="#CaseStudies"
             className="btn px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark"
           >
-            Explore Case Studies
+            Explore case studies
           </a>
         </motion.p>
       </section>
       <section className="bg-white">
         <CaseStudiesList />
       </section>
+
+
       <StatsSection />
       <TestimonialsSection />
-      <section id="projects" className="py-16 px-6 bg-white">
-        <motion.h2
-          className="text-3xl font-bold text-center text-primary mb-12 underline"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          Some Featured Projects
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {/* Project 1 */}
-          <motion.div
-            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              Auschwitz: Not Long Ago, Not Far Away
-            </h3>
-            <p>
-              <strong>Words Translated:</strong> 70K
-            </p>
-            <p>
-              <strong>Description:</strong> Translated the exhibition from
-              English into Swedish in collaboration with the Auschwitz-Birkenau
-              Museum.
-            </p>
-          </motion.div>
-
-          {/* Project 2 */}
-          <motion.div
-            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              UNESCO Heritage Project
-            </h3>
-            <p>
-              <strong>Words Translated:</strong> 20K
-            </p>
-            <p>
-              <strong>Description:</strong> Co-translated and edited a UNESCO
-              heritage project for a large cultural platform.
-            </p>
-          </motion.div>
-
-          {/* Project 3 */}
-          <motion.div
-            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              Audioguide Translation
-            </h3>
-            <p>
-              <strong>Words Translated:</strong> 100K
-            </p>
-            <p>
-              <strong>Description:</strong> Translated and reviewed audioguide
-              content for one of the world's most famous museums.
-            </p>
-          </motion.div>
-          {/* Project 4 */}
-          <motion.div
-            className="project bg-gray-50 p-6 rounded-lg shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-xl font-semibold mb-2">Picturing Auschwitz</h3>
-            <p>
-              <strong>Words Translated:</strong> 7K
-            </p>
-            <p>
-              <strong>Description:</strong> Translated exhibition content for
-              the Auschwitz-Birkenau Museum, displayed at the UN HQ.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       <section id="contact" className="py-16 px-6 bg-white text-center">
         <motion.h2
@@ -348,7 +261,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Let's Work Together !
+          Let's work together !
         </motion.h2>
         <motion.p
           className="text-lg mb-6"
@@ -356,7 +269,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Click below to book a FREE consultation with Luna Jungblut.
+          Click below to book a FREE consultation with me.
         </motion.p>
         <a
           href="http://calendly.com/artlifetranslations/consultation"

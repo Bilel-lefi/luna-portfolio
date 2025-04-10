@@ -3,7 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function CaseStudyCard({ study, showDetails, onSeeMore, isDesktop }) {
   return (
-    <div onClick={onSeeMore} className="w-full cursor-pointer bg-gray-100/10 ring-1 ring-gray-900/10 hover:shadow-gray-100 rounded-xl overflow-hidden transition duration-300 hover:shadow-lg">
+    <div
+      onClick={onSeeMore}
+      className="w-full cursor-pointer bg-gray-100/10 ring-1 ring-gray-900/10 hover:shadow-[#92fff4] rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg"
+    >
       <img
         src={study.images[0]}
         alt={study.title}

@@ -61,7 +61,6 @@ const StatsSection = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 1 } },
         }}
       >
-
         In figures
       </motion.h2>
       <motion.div
@@ -105,14 +104,13 @@ const StatsSection = () => {
 const Home = () => {
   return (
     <div className="font-sans  text-gray-900">
+<div className=""   style={{
+          background: "linear-gradient(to right, #44a299, white 55%)",
+        }}>
       <section
         id="hero"
         className="flex pt-12 pb-2 px-6 overflow-hidden"
-        style={{
-          background: "linear-gradient(to right, #44a299, white 55%)",
-        }}
       >
-        {/* Contenu principal */}
         <div className="relative z-10 container mx-auto flex flex-col  bg-transparent">
           <div className="flex flex-col md:flex-row ">
             <motion.div
@@ -212,13 +210,9 @@ const Home = () => {
           <img src={bg2} alt="" className="w-[80%] hidden md:block " />
         </div>
       </section>
-
       <section
         id="intro"
         className="pb-10 px-6 text-center "
-        style={{
-          background: "linear-gradient(to right, #44a299, white 55%)",
-        }}
       >
         <motion.h1
           className="text-4xl font-bold text-primary mb-4"
@@ -246,10 +240,10 @@ const Home = () => {
           </a>
         </motion.p>
       </section>
+</div>
       <section className="bg-white">
         <CaseStudiesList />
       </section>
-
 
       <StatsSection />
       <TestimonialsSection />

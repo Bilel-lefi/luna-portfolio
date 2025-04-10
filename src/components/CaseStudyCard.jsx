@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function CaseStudyCard({ study, showDetails, onSeeMore, isDesktop }) {
   return (
-    <div className="w-full bg-white hover:shadow-gray-400 rounded-xl overflow-hidden transition duration-300 hover:shadow-lg">
+    <div onClick={onSeeMore} className="w-full cursor-pointer bg-gray-100/10 ring-1 ring-gray-900/10 hover:shadow-gray-100 rounded-xl overflow-hidden transition duration-300 hover:shadow-lg">
       <img
         src={study.images[0]}
         alt={study.title}
@@ -15,7 +15,6 @@ function CaseStudyCard({ study, showDetails, onSeeMore, isDesktop }) {
         </div>
         <div className="flex justify-end ">
           <button
-            onClick={onSeeMore}
             className="px-4 py-2 text-white bg-tertiary rounded-lg hover:bg-primary-dark transition"
             style={{
               borderTopLeftRadius: "1rem",
@@ -44,8 +43,8 @@ function CaseStudyCard({ study, showDetails, onSeeMore, isDesktop }) {
                 <span className="font-semibold">Service:</span> {study.service}
               </p>
               <p>
-                <span className="font-semibold">Language:</span>{" "}
-                {study.languages}
+                <span className="font-semibold">wordsTranslated:</span>{" "}
+                {study.wordsTranslated}
               </p>
               <p>
                 <span className="font-semibold">Subject:</span> {study.topic}

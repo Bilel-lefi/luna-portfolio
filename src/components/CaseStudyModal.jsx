@@ -24,23 +24,19 @@ function CaseStudyModal({ study, onClose }) {
         </div>
 
         <p>
-          <span className="font-semibold text-xl text-primary">Service :</span>{" "}
-          {study.service}
+          <span className="font-semibold text-xl text-primary">words translated :</span>{" "}
+          {study.wordsTranslated}
         </p>
-        <p>
-          <span className="font-semibold text-xl text-primary">Language :</span>{" "}
-          {study.languages}
-        </p>
-        <p>
-          <span className="font-semibold text-xl text-primary">Subject :</span>{" "}
-          {study.topic}
-        </p>
-        <p>{study.description}</p>
+
         <p>
           <span className="font-semibold text-xl text-primary">Results :</span>{" "}
-          {study.results}
+          {study.Results}
         </p>
-        <blockquote className="italic text-gray-600">
+        <p>
+          <span className="font-semibold text-xl text-primary">Description :</span>{" "}
+          {study.description}
+        </p>
+        <blockquote className="italic">
           <span className="font-semibold text-xl text-primary ">
             Testimonial :
           </span>{" "}

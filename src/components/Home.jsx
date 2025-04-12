@@ -11,7 +11,7 @@ const StatsSection = () => {
   const stats = [
     { value: 132, label: "Happy clients" },
     { value: 654, label: "Projects delivered" },
-    { value: 1000000, label: "Words translated, edited and reviewed" },
+    { value: 5000000, label: "Words translated, edited and reviewed" },
     { value: 0, label: "Deadlines missed" },
     { value: 100, label: "Satisfaction rating" },
   ];
@@ -66,36 +66,35 @@ const StatsSection = () => {
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
-        {animatedValues.map((stat, index) => (
-          <motion.div
-            key={index}
-            className="relative group bg-gray-50 p-6 rounded-lg shadow-lg h-40 flex items-center justify-center overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            {/* Animated background ON HOVER */}
-            <div className="absolute inset-0 bg-gradient-to-l from-[#dda7d3] to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />
+{animatedValues.map((stat, index) => (
+  <motion.div
+    key={index}
+    className="relative group bg-gray-50 p-6 rounded-lg shadow-lg h-40 flex items-center justify-center overflow-hidden"
+    whileHover={{ scale: 1.05 }}
+    variants={{
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    }}
+  >
+    {/* Animated background ON HOVER */}
+    <div className="absolute inset-0 bg-gradient-to-l from-[#dda7d3] to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />
 
-            {/* Card content */}
-            <div className="relative z-10 text-center">
-              <p className="text-4xl font-semibold text-teal-600">
-                {stats[index].value === 1000000
-                  ? `${
-                      stat.value >= 1000000 ? "1M" : stat.value.toLocaleString()
-                    }`
-                  : stats[index].value === 100
-                  ? `${stat.value >= 100 ? "100%" : `${stat.value}%`}`
-                  : stat.value}
-                {stat.value < stats[index].value && "+"}
-              </p>
+    {/* Card content */}
+    <div className="relative z-10 text-center">
+      <p className="text-4xl font-semibold text-teal-600">
+        {stat.value === 5000000
+          ? "5 Million +"
+          : stat.value === 100
+          ? `${stat.value}%`
+          : stat.value.toLocaleString()}
+        {stat.value < stats[index].value && "+"}
+      </p>
 
-              <p className="text-lg text-gray-700">{stat.label}</p>
-            </div>
-          </motion.div>
-        ))}
+      <p className="text-lg text-gray-700">{stat.label}</p>
+    </div>
+  </motion.div>
+))}
+
       </motion.div>
     </section>
   );

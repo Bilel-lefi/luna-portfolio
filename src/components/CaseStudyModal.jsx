@@ -25,7 +25,7 @@ function CaseStudyModal({ study, onClose }) {
 
         <p>
           <span className="font-semibold text-xl text-primary">
-            words translated :
+            Words translated :
           </span>{" "}
           {study.wordsTranslated}
         </p>

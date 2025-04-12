@@ -5,7 +5,7 @@ function CaseStudyCard({ study, showDetails, onSeeMore, isDesktop }) {
   return (
     <div
       onClick={onSeeMore}
-      className="w-full cursor-pointer bg-gray-100/10 ring-1 ring-gray-900/10 hover:shadow-[#92fff4] rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg"
+      className="w-full cursor-pointer bg-gray-100/10 ring-1 ring-gray-900/10 hover:shadow-[#e28ac5] rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg"
     >
       <img
         src={study.images[0]}

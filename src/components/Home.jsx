@@ -12,13 +12,6 @@ const StatsSection = () => {
     { value: 132, label: "Happy clients" },
     { value: 654, label: "Projects delivered" },
     { value: 1000000, label: "Words translated, edited and reviewed" },
-    // { value: 350, label: "Conferences interpreted" },
-
-    // {
-    //   value: 3,
-    //   label:
-    //     "Industry conferences as public speaker Translated novel published",
-    // },
     { value: 0, label: "Deadlines missed" },
     { value: 100, label: "Satisfaction rating" },
   ];
@@ -89,9 +82,16 @@ const StatsSection = () => {
             {/* Card content */}
             <div className="relative z-10 text-center">
               <p className="text-4xl font-semibold text-teal-600">
-                {stat.value}
+                {stats[index].value === 1000000
+                  ? `${
+                      stat.value >= 1000000 ? "1M" : stat.value.toLocaleString()
+                    }`
+                  : stats[index].value === 100
+                  ? `${stat.value >= 100 ? "100%" : `${stat.value}%`}`
+                  : stat.value}
                 {stat.value < stats[index].value && "+"}
               </p>
+
               <p className="text-lg text-gray-700">{stat.label}</p>
             </div>
           </motion.div>
@@ -132,7 +132,7 @@ const Home = () => {
                 transition={{ duration: 1 }}
               >
                 <div className="flex items-center justify-center">
-                  <h1 className="text-tertiary pb-4 text-4xl md:text-6xl font-bold whitespace-nowrap border-r-4 border-white pr-4 animate-typewriter overflow-hidden">
+                  <h1 className="text-tertiary pb-4 text-4xl md:text-6xl font-bold whitespace-nowrap border-r-4 border-white  animate-typewriter overflow-hidden">
                     Hi! I'm Luna{" "}
                   </h1>
                 </div>

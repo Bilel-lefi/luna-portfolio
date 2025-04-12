@@ -66,35 +66,34 @@ const StatsSection = () => {
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
-{animatedValues.map((stat, index) => (
-  <motion.div
-    key={index}
-    className="relative group bg-gray-50 p-6 rounded-lg shadow-lg h-40 flex items-center justify-center overflow-hidden"
-    whileHover={{ scale: 1.05 }}
-    variants={{
-      hidden: { opacity: 0, y: 50 },
-      visible: { opacity: 1, y: 0 },
-    }}
-  >
-    {/* Animated background ON HOVER */}
-    <div className="absolute inset-0 bg-gradient-to-l from-[#dda7d3] to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />
+        {animatedValues.map((stat, index) => (
+          <motion.div
+            key={index}
+            className="relative group bg-gray-50 p-6 rounded-lg shadow-lg h-40 flex items-center justify-center overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            {/* Animated background ON HOVER */}
+            <div className="absolute inset-0 bg-gradient-to-l from-[#dda7d3] to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />
 
-    {/* Card content */}
-    <div className="relative z-10 text-center">
-      <p className="text-4xl font-semibold text-teal-600">
-        {stat.value === 5000000
-          ? "5 Million +"
-          : stat.value === 100
-          ? `${stat.value}%`
-          : stat.value.toLocaleString()}
-        {stat.value < stats[index].value && "+"}
-      </p>
+            {/* Card content */}
+            <div className="relative z-10 text-center">
+              <p className="text-4xl font-semibold text-teal-600">
+                {stat.value === 5000000
+                  ? "5 Million +"
+                  : stat.value === 100
+                  ? `${stat.value}%`
+                  : stat.value.toLocaleString()}
+                {stat.value < stats[index].value && "+"}
+              </p>
 
-      <p className="text-lg text-gray-700">{stat.label}</p>
-    </div>
-  </motion.div>
-))}
-
+              <p className="text-lg text-gray-700">{stat.label}</p>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );
@@ -152,7 +151,7 @@ const Home = () => {
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 Helping museums & institutions get more international visitors
-                each year with expertly curated language services
+                each year with expertly curated language services since 2013
               </motion.p>
               <motion.p
                 className="text-lg text-gray-700 mb-4"
@@ -259,7 +258,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Let's work together !
+          Let's work together!
         </motion.h2>
         <motion.p
           className="text-lg mb-6"

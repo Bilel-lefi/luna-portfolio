@@ -24,7 +24,9 @@ function CaseStudyModal({ study, onClose }) {
         </div>
 
         <p>
-          <span className="font-semibold text-xl text-primary">words translated :</span>{" "}
+          <span className="font-semibold text-xl text-primary">
+            words translated :
+          </span>{" "}
           {study.wordsTranslated}
         </p>
 
@@ -33,7 +35,9 @@ function CaseStudyModal({ study, onClose }) {
           {study.Results}
         </p>
         <p>
-          <span className="font-semibold text-xl text-primary">Description :</span>{" "}
+          <span className="font-semibold text-xl text-primary">
+            Description :
+          </span>{" "}
           {study.description}
         </p>
         <blockquote className="italic">
@@ -42,6 +46,19 @@ function CaseStudyModal({ study, onClose }) {
           </span>{" "}
           {study.testimonial}
         </blockquote>
+        <div className="relative bottom-4 mb-4">
+          {study.link && (
+            <a
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute right-0 md:right-0 md:top-0 text-xl rounded-xl px-2 bg-tertiary text-white"
+            >
+              Click here
+            </a>
+          )}
+        </div>
+
         {study.images.length > 1 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             {study.images.slice(1).map((img, i) => (

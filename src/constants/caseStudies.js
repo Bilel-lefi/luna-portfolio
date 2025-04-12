@@ -15,6 +15,7 @@ const caseStudies = [
     testimonial:
       "Thanks to her willingness, professionalism and commitment, we were able to complete the project on time and with good results. – Irene Pagalday, Musealia",
     images: [case3],
+      link : "https://auschwitz.net/?page_id=8435"
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const caseStudies = [
     testimonial:
       "Luna is a very creative and able translator. Her research is spotless and her writing style always on target. – Nathalie Reis, Reis Translations",
     images: [case22],
+    link : "https://artsandculture.google.com/project/heritage-on-the-edge?hl=fr"
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const caseStudies = [
     testimonial:
       "It is always a pleasure to work with Luna: she is very knowledgeable, thorough, and her translations reflect the subtleties of the original texts. – Danielle Bastiaens, Project Manager",
     images: [case1],
+      link : ""
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const caseStudies = [
     testimonial:
       "Luna has the perfect combination of excellent skills and care of each project she works on. – Luis Ferreiro, CEO, Musealia",
     images: [case44],
+      link : ""
   },
 ];
 
